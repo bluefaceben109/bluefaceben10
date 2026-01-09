@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html style="width:100%;height:100%;background-color:#1a0000;">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+<meta name="description" content="HorrorCraft 1.8 - A terrifying Minecraft experience with horror mods and dark atmosphere" />
+<meta name="keywords" content="horrorcraft, minecraft, horror, mods, scary, 1.8, survival horror" />
+<title>HorrorCraft 1.8 - Survive the Darkness</title>
+<meta property="og:locale" content="en-US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="HorrorCraft 1.8 - Survive the Darkness" />
+<meta property="og:description" content="Experience a terrifying Minecraft survival horror experience with custom horror mods" />
+<script type="text/javascript">
+"use strict";
+var relayId = Math.floor(Math.random() * 3);
+
+// %%%%%%%%% launch options %%%%%%%%%%%%
+
+window.eaglercraftXOptsHints = {
+	hintsVersion: 1,
+	container: "game_frame",
+	worldsDB: "horrorcraft_worlds",
+	relays: [
+		{ addr: "wss://relay.deev.is/", comment: "HorrorCraft Relay #1 - The Void", primary: relayId === 0 },
+		{ addr: "wss://relay.lax1dude.net/", comment: "HorrorCraft Relay #2 - The Abyss", primary: relayId === 1 },
+		{ addr: "wss://relay.shhnowisnottheti.me/", comment: "HorrorCraft Relay #3 - The Depths", primary: relayId === 2 }
+	],
+	checkRelaysForUpdates: true
+};
+
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+</script>
+<style type="text/css">
+	body {
+		background: linear-gradient(135deg, #1a0000 0%, #330000 50%, #1a0000 100%);
+		color: #cc0000;
+		font-family: 'Arial Black', sans-serif;
+		text-shadow: 0 0 10px #cc0000;
+	}
+	
+	#game_frame {
+		border: 3px solid #660000;
+		box-shadow: 0 0 20px #cc0000, inset 0 0 20px #330000;
+	}
+	
+	h1 {
+		color: #ff3333;
+		text-shadow: 0 0 15px #cc0000, 0 0 30px #990000;
+		font-weight: bold;
+		letter-spacing: 2px;
+	}
+</style>
+<style type="eaglercraft" id="eaglercraftXClientSignature">data:application/octet-stream;base64,RUFHU0lHAAFEiuYe8UyCoIyJW0pkSS3p99/3ntzD3OKCKSDULXNjnzkyR6hM+sWmy9FzW9PGGu/FhbnS8j7xeC/IoNeNogNiAlflBlRN[...]
+<style type="eaglercraft" id="eaglercraftXClientBundle">data:application/octet-stream;base64,H4sIAAAAAAAA/+y9aVcbybIo+p21+j8Ay5subWRtCTDGFGU/ELNtsMEzh8tSDZJKsyVhg4H//mLIsQYh3G6fPufevXbjUo6REZGRkZGRkfO[...]
+
+<!-- HorrorCraft Custom Mods Configuration -->
+<script type="text/javascript">
+	// Horror Mods Enabled
+	window.horrorCraftMods = {
+		darkAmbience: true,
+		spookyMobs: true,
+		horrorSounds: true,
+		cursedBlocks: true,
+		nightmareMode: false, // Enable for extreme horror
+		atmosphereEnhanced: true
+	};
+	
+	// Custom Horror Texture Pack
+	window.horrorCraftTextures = {
+		enabled: true,
+		pack: "horrorcraft_textures_v1",
+		bloodStains: true,
+		darkTheme: true,
+		eerieLighting: true
+	};
+</script>
+
+</head>
+<body>
+<div id="game_frame" style="width:100%;height:100%;"></div>
+</body>
+</html>
