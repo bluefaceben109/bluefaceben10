@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Fast Cat Game</title>
+    <style>
+        body { margin: 0; }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // Scene setup
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // Add a cube (placeholder for the superhero)
+        const geometry = new THREE.BoxGeometry();
+        const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+        const superhero = new THREE.Mesh(geometry, material);
+        scene.add(superhero);
+
+        camera.position.z = 5;
+
+        // Controls
+        const controls = {
+            forward: false,
+            backward: false,
+            left: false,
+            right: false
+        };
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'w') controls.forward = true;
+            if (event.key === 's') controls.backward = true;
+            if (event.key === 'a') controls.left = true;
+            if (event.key === 'd') controls.right = true;
+        });
+
+        document.addEventListener('keyup', (event) => {
+            if (event.key === 'w') controls.forward = false;
+            if (event.key === 's') controls.backward = false;
+            if (event.key === 'a') controls.left = false;
+            if (event.key === 'd') controls.right = false;
+        });
+
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+
+            // Move superhero
+            if (controls.forward) superhero.position.z -= 0.1;
+            if (controls.backward) superhero.position.z += 0.1;
+            if (controls.left) superhero.position.x -= 0.1;
+            if (controls.right) superhero.position.x += 0.1;
+
+            renderer.render(scene, camera);
+        }
+
+        animate();
+    </script>
+</body>
+</html>
